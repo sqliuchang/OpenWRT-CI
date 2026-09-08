@@ -184,6 +184,7 @@ CONFIG_PACKAGE_luci-proto-mbim=y
 CONFIG_PACKAGE_kmod-usb-serial-option=y
 CONFIG_PACKAGE_picocom=y
 CONFIG_PACKAGE_socat=y
+CONFIG_PACKAGE_adb=y
 #qmodem
 CONFIG_PACKAGE_luci-app-qmodem-next=y
 CONFIG_PACKAGE_luci-app-qmodem_INCLUDE_generic-qmi-wwan=y
