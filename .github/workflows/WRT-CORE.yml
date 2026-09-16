@@ -104,6 +104,8 @@ jobs:
           git fetch --depth 1 origin $WRT_BRANCH
           git checkout FETCH_HEAD
 
+          curl -sL "https://github.com/VIKINGYFY/immortalwrt/commit/8dd0872.patch" | git am -3
+
           echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
 
           # GitHub Action 移除国内下载源
