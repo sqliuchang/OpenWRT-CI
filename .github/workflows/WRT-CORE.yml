@@ -98,9 +98,13 @@ jobs:
 
       - name: Clone Code
         run: |
-          git clone --depth=1 --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
+          mkdir -p ./wrt/ && cd ./wrt/
+          git init
+          git remote add origin $WRT_REPO
+          git fetch --depth 1 origin $WRT_BRANCH
+          git checkout FETCH_HEAD
 
-          cd ./wrt/ && echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
+          echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
 
           # GitHub Action 移除国内下载源
           PROJECT_MIRRORS_FILE="./scripts/projectsmirrors.json"
