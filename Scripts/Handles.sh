@@ -53,13 +53,13 @@ if [ -d *"luci-app-mini-diskmanager"* ]; then
 	cd $PKG_PATH && echo "mini-diskmanager has been fixed!"
 fi
 
-#qmodem公版MHI驱动依赖
-if [ -d *"Qmodem"* ]; then
-	echo " " && cd ./Qmodem/
+#修改qmodem公版MHI驱动依赖
+if [ -d *"QModem"* ]; then
+	echo " " && cd ./QModem/
 
 	sed -i "/kmod-mhi-wwan /d" ./application/qmodem/Makefile
 
-	cd $PKG_PATH && echo "Qmodem Generic MHI driver has been fixed!"
+	cd $PKG_PATH && echo "QModem Generic MHI driver has been fixed!"
 fi
 
 #修改qca-nss-drv启动顺序
